@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset="utf-8"/>
+<style>
+form {border-style: solid;
+      margin: 50px;}
+</style>
+</head>
+<body>
+
+<h1> Please fill out one of the forms</h1>
+
+<form action='/cgi-bin/logic.py' method = "GET">
+<p><h2>Retrieve supplier info from part name</h2></p>
+<p>Please enter a part name</p>
+<input type='text' name='pname'><br>
+<input type='hidden' name='kind' value='A'><br>
+<input type='checkbox' name = 'sname'/> Supplier Name<br>
+<input type='checkbox' name = 'sid' /> Supplier ID<br>
+<input type='checkbox' name = 'address'/> Supplier Address<br>
+<input type='checkbox' name = 'cost'/> Cost of part<br>
+<input type='submit' value='Submit'>
+</form>
+
+<form action='/cgi-bin/logic.py' method='GET'>
+<p><h2>Retrieve supplier name who supply parts at given price or higher</h2></p>
+<p>Please enter a cost</p>
+<input type='text' name='cost'><br>
+<input type='hidden' name='kind' value='B'><br>
+<input type='submit' value='Submit'>
+</form>
+
+<form action='/cgi-bin/logic.py' method='GET'>
+<p><h2>Retrieve supplier names and addresses who charge most for given part id</h2></p>
+<p>Please enter a part id</p>
+<input type='text' name='pid'><br>
+<input type='hidden' name='kind' value='C'><br>
+<input type='submit' value='Submit'>
+</form>
+
+<form action='/cgi-bin/logic.py' method='GET'>
+<p><h2>Retrieve names of parts with the specified color from suppliers from the specified address</h2></p>
+<p>Please enter a part color</p>
+<input type='text' name='color'><br>
+<p>Please enter a suppliers address</p>
+<input type='text' name='address'><br>
+<input type='hidden' name='kind' value='D'><br>
+<input type='submit' value='Submit'>
+</form>
+
+<form action='/cgi-bin/logic.py' method='GET'>
+<p><h2>Retrieve supplier ids and names from the specified adress if they supply no parts</h2></p>
+<p>Please enter a suppliers address</p>
+<input type='text' name='address'><br>
+<input type='hidden' name='kind' value='E'><br>
+<input type='submit' value='Submit'>
+</form>
+
+
+</body>
+</html>
